@@ -8,7 +8,14 @@ const User = defineTable({
   }
 })
 
+const Comment = defineTable({
+  columns: {
+    user: column.text(),
+    content: column.text(),
+  }
+})
+
 // https://astro.build/db/config
 export default defineDb({
-  tables: { User }
+  tables: { User, Comment }
 });

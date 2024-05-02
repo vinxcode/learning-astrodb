@@ -5,7 +5,7 @@ import { db, User } from "astro:db";
 
 if(Astro.request.method === 'POST'){
 	const formData = await Astro.request.formData();
-	const userId = formData.get('idUser')
+	const userId = formData.get('userId')
 	const name = formData.get('name')
 	const phone = formData.get('phone')
 	if(typeof userId === 'string' && typeof name === 'string' && typeof phone === 'string'){
@@ -31,7 +31,7 @@ const users = await db.select().from(User);
 
 		<form method="POST" style="display: grid">
 			<label for="userId">Id</label>
-			<input id="userId" name="IserId" />
+			<input id="userId" name="userId" />
 
 			<label for="name">Name</label>
 			<input id="name" name="name" />
