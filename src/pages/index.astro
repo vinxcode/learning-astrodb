@@ -1,4 +1,5 @@
 ---
+// import { like } from "astro:db";
 import Layout from "../layouts/Layout.astro";
 import { db, User } from "astro:db";
 
@@ -13,6 +14,7 @@ if(Astro.request.method === 'POST'){
 }
 
 const users = await db.select().from(User);
+// const users = await db.select().from(User).where(like(User.userId, '2'));
 ---
 
 <Layout title="Welcome to Astro.">
